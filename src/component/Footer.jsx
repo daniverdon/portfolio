@@ -1,24 +1,4 @@
-// import './Footer.css'
 
-// export default function Footer() {
-//   const scrollToTop = () => {
-//     window.scrollTo({ top: 0, behavior: 'smooth' })
-//   }
-
-//   return (
-//     <footer className="footer">
-//       <div className="footer-container">
-//         <p className="footer-copy">
-//           © {new Date().getFullYear()} · Diseñado y desarrollado por Daniel Verdón.
-//         </p>
-        
-//         <button onClick={scrollToTop} className="footer-back-to-top" aria-label="Volver arriba">
-//           <span className="mono-text">// volver_arriba()</span>
-//         </button>
-//       </div>
-//     </footer>
-//   )
-// }
 import './Footer.css'
 import { Mail } from 'lucide-react'
 
