@@ -1,0 +1,197 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+  padding: 28px 0;
+}
+
+/* Estado premium con scroll activo */
+.navbar.scrolled {
+  padding: 16px 0;
+  background: rgba(11, 15, 25, 0.7); /* Match exacto con el fondo oscuro del Hero */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo refinado */
+.nav-logo {
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-logo span {
+  color: var(--accent, #10b981);
+  font-weight: 400;
+}
+
+/* Enlaces de escritorio */
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  display: inline-block;
+  position: relative;
+  padding: 4px 0;
+}
+
+/* Línea inferior minimalista e inteligente */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--accent, #10b981), transparent);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* --- BURGER BUTTON (Alineación y proporciones exactas) --- */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 102;
+}
+
+.nav-burger span {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.nav-burger.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-burger.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* --- RESPONSIVE & MOBILE MENU --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 0;
+  }
+  
+  .navbar.scrolled {
+    padding: 16px 0;
+  }
+
+  .nav-burger {
+    display: flex;
+  }
+
+  /* Overlay de fondo */
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 9, 15, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Menú lateral estilo cajón moderno */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: #0e121f; /* Tono oscuro limpio */
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 40px;
+    gap: 32px;
+    z-index: 101;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    width: 100%;
+  }
+
+  /* Desactivar la línea inferior en móviles, usar cambio de color directo */
+  .nav-links a::after {
+    display: none;
+  }
+  
+  .nav-links a:transparent:hover {
+    color: var(--accent, #10b981);
+  }
+}

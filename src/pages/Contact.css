@@ -1,0 +1,83 @@
+.contact-section {
+  position: relative;
+  padding: 120px 24px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-huge-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: #fff;
+  margin: 14px 0 24px;
+}
+
+.contact-minimal-desc {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 40px;
+}
+
+.contact-buttons-group {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.contact-btn-primary,
+.contact-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.contact-btn-primary {
+  background: #fff;
+  color: var(--bg);
+}
+.contact-btn-primary:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16,185,129,0.25);
+}
+
+.contact-btn-secondary {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.contact-btn-secondary:hover {
+  border-color: #0a66c2;
+  color: #0a66c2;
+  transform: translateY(-2px);
+}
+
+.linkedin-brand-icon { width: 16px; height: 16px; display: flex; }
+.linkedin-brand-icon svg { width: 100%; height: 100%; }
+
+.arrow-icon, .arrow-icon-secondary {
+  transition: transform 0.2s ease;
+}
+.contact-btn-primary:hover .arrow-icon,
+.contact-btn-secondary:hover .arrow-icon-secondary {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 480px) {
+  .contact-buttons-group { flex-direction: column; width: 100%; }
+  .contact-btn-primary, .contact-btn-secondary { justify-content: center; width: 100%; }
+}
