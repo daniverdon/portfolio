@@ -1,6 +1,6 @@
 
 import './Projects.css'
-import { ExternalLink, Code2, Sparkles, AppWindow, ShieldCheck } from 'lucide-react'
+import { ExternalLink, Code2, Sparkles, AppWindow, ShieldCheck, Car } from 'lucide-react'
 import { techBrandConfig } from '../data/brandIcons'
 
 const listaProyectos = [
@@ -14,6 +14,17 @@ const listaProyectos = [
     linkWeb: 'https://dogenda.es',
     linkCode: null, // Producto comercial, el código se protege
     badge: 'En Producción 🔥'
+  },
+  {
+    name: 'The Beetle Wedding Experience',
+    tagline: 'Landing Page Premium & Modular',
+    icon: ExternalLink, // Un icono de enlace externo o puedes importar uno de coche si tienes en lucide
+    desc: 'Sitio web exclusivo para el alquiler de un Volkswagen Beetle clásico para bodas y eventos. Migrado de una plantilla estática a React para modularizar componentes e integrar variables de entorno seguras.',
+    features: ['Diseño 100% Responsivo', 'Efecto Parallax Nativo', 'Variables de Entorno (.env)'],
+    tags: ['React', 'Vite', 'CSS'], // Asegúrate de que coincidan con tus claves de techBrandConfig
+    linkWeb: 'https://beetle-wedding-landing.vercel.app',
+    linkCode: 'https://github.com/daniverdon/beetle-wedding-landing',
+    badge: 'Desplegado 🚀'
   },
   {
     name: 'FitCore',
