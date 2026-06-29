@@ -15,7 +15,7 @@ export default function Hero() {
 
           <div className="hero-badge">
             <TerminalIcon size={12} className="terminal-anim" />
-            <span className="mono-text">daniverdon.dev // fullstack</span>
+            <span className="mono-text">Daniel Verdón // fullstack</span>
           </div>
 
           <h1 className="hero-title">
